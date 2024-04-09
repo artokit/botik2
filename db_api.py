@@ -5,10 +5,10 @@ connect = sqlite3.connect('db.sqlite')
 cursor = connect.cursor()
 
 
-def add_user_status(user_id, sub_id, status):
+def add_user_status(user_id, sub_id, data):
     cursor.execute(
         "INSERT INTO USERS_STATUS VALUES(?, ?, ?, ?)",
-        (user_id, sub_id, status, datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        (user_id, sub_id, data, datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     )
     connect.commit()
 
