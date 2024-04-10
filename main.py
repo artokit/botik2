@@ -7,9 +7,9 @@ from aiogram.utils import markdown
 
 import db_api
 
-CHANNEL_ID = -1001968382463
-ADMINS = [5833820044, 6143457652]
-bot = Bot(token='6549593881:AAELHuVb0dfJMtUZ-Q2QPwXytnKCG2YZZ-s')
+CHANNEL_ID =-1002133362306
+ADMINS = [5833820044, 6143457652, 7014027706]
+bot = Bot(token='7167110973:AAHCrPi0i6tQ0SJnCyqyxV5MpFbn6oEF3cM')
 dp = Dispatcher()
 
 
@@ -41,7 +41,7 @@ async def get_user(message: Message):
 
         await message.answer(
             markdown.text(f"UTM метка: {user[1]}\n") +
-            f"Ссылка: {url}?sub_id={user[1]}&user_id={user[0]}{casino_id}\n\n".replace("_", "\_") +
+            f"Ссылка: {url}?sub1={user[1]}&sub2={user[0]}{casino_id}\n\n".replace("_", "\_") +
             markdown.text("Все совпадения в группе: \n") +
             "".join([f"`[{i[3]}]` %s\n" % markdown.bold(i[2]).replace('\-', '-').replace("reg:", "reg").replace(user_casino_id, "").replace("::", ":") for i in statuses]),
             parse_mode="markdown"
